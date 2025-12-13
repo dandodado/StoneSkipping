@@ -11,7 +11,7 @@ noStroke();
 fill(0, 0, 200);
 ellipse(this.pos.x, this.pos.y, this.w, this.w);
 rectMode (CENTER);
-quad(0 ,height/2-15, width, height/2-15, width, height, 0 , height);
+//quad(0 ,height/2-15, width, height/2-15, width, height, 0 , height);
 
 }
 applyForce (force) {
@@ -46,7 +46,7 @@ repel(other) {
   if (d > 0 && d < minDist) {
     dir.normalize();
 
-    let strength = (minDist - d) * 0.001;
+    let strength = (minDist - d) * 0.0007;
     dir.mult(strength);
 
     this.applyForce(dir);
