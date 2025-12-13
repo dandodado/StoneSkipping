@@ -1,6 +1,7 @@
 class Water {
  constructor(x, y, w) {
 this.pos = createVector( x, y);
+this.origin = createVector(x, y);
 this.vel = createVector(0,0);
 this.acc = createVector(0,0);
 this.w = w;
@@ -25,7 +26,7 @@ update() {
 checkEdges() {
     if (this.pos.y > height/2 - this.w/2) {
         this.vel.y *= -0.5;
-        this.pos.y = height/2 - this.w/2;
+       // this.pos.y = height + this.w/2;
     }
      if (this.pos.x > width - this.w/2) {
         this.vel.x *= -0.5;
@@ -46,11 +47,17 @@ repel(other) {
   if (d > 0 && d < minDist) {
     dir.normalize();
 
-    let strength = (minDist - d) * 0.0007;
+    let strength = (minDist - d) * 0.007;
     dir.mult(strength);
 
     this.applyForce(dir);
   }
+}
+
+calculateReturnForce(k) {
+  let force = p5.Vector.sub(this.origin, this.pos);
+  force.mult(k);
+  return force;
 }
 
 

@@ -1,7 +1,7 @@
 class Paticle {
 constructor() {
 this.pos = createVector(width/2,50);
-this.vel = createVector(3,0);
+this.vel = createVector(5,0);
 this.acc = createVector(0,0);
 this.w = 60;
 this.mass = 30;
@@ -28,7 +28,7 @@ getForce(m) {
   let minDist = 60;   
 
   if (distance < minDist) {
-    let strength = this.mass / (distance * distance)*0.03;
+    let strength = this.mass / (distance * distance)*0.5;
   force.mult(strength);
     return force;
   }
@@ -37,10 +37,10 @@ getForce2(m) {
    let force = p5.Vector.sub(this.pos, m.pos);
   let distance = force.mag();
 
-  let minDist = 100;   
+  let minDist = 50;   
 
   if (distance < minDist) {
-    let strength = this.mass / (distance * distance)*0.3;
+    let strength = this.mass / (distance * distance)*0.8;
   force.mult(-strength);
     return force;
   }
