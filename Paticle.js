@@ -21,6 +21,8 @@ ellipse(this.pos.x, this.pos.y, this.w , this.w-30);
 update() {
     this.vel.add(this.acc);
     this.vel.limit(10);
+    this.vel.y = max(this.vel.y, -7);
+     this.vel.x = max(this.vel.x, -2);
     this.pos.add(this.vel);
     this.acc.mult(0);
 
