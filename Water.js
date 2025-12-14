@@ -47,7 +47,7 @@ repel(other) {
   if (d > 0 && d < minDist) {
     dir.normalize();
 
-    let strength = (minDist - d) * 0.007;
+    let strength = (minDist - d) * 0.06;
     dir.mult(strength);
 
     this.applyForce(dir);

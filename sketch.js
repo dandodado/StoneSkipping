@@ -5,7 +5,7 @@ let w = 20;
 let m = 40;
 function setup() {
   createCanvas(1400, 400);
-  for (let y = height/2; y < height; y += w*1.2) {
+  for (let y = height/2+20; y < height; y += w*1.2) {
     for (let x = 0; x < width-20; x += w*1.2) {
       waters.push(new Water(x, y, w));
     }
