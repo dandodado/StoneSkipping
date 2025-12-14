@@ -12,11 +12,10 @@ this.f = 0;
 
 show() {
   if(this.f == 0){
-    fill(150,75,0);
-ellipse(this.pos.x, this.pos.y, this.w , this.w);
+    
   }else{
   fill(150,75,0);
-ellipse(this.pos.x, this.pos.y, this.w , this.w);
+ellipse(this.pos.x, this.pos.y, this.w , this.w-30);
   }
 }
 update() {
