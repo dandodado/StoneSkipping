@@ -13,3 +13,14 @@ body {
   justify-content: center;
   height: 100vh;
 }
+#guide {
+  position: absolute;
+  top: 400px;
+  left: 1200px;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+  color: #333;
+}

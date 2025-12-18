@@ -1,13 +1,12 @@
 class Paticle {
-constructor() {
+constructor(speed) {
 this.pos = createVector(10,50);
-this.vel = createVector(10,0);
+this.vel = createVector(speed,0);
 this.acc = createVector(0,0);
 this.limit = createVector(2,0);
 this.w = 60;
 this.mass = 30;
 this.f = 0;
-
 }
 
 show() {
@@ -92,14 +91,15 @@ getForce4(m) {
     return force;
   }
   }
-checkEdges() {
+checkEdges(speed) {
     if (this.pos.y > height +100) {
        this.pos = createVector(10,50);
-this.vel = createVector(10,0);
+this.vel = createVector(speed,0);
 this.acc = createVector(0,0);
 this.w = 60;
 this.mass = 30;
 this.f = 1;
+this.s = 0;
     }
     if (this.pos.x > width - this.w/2) {
         this.pos.x = 0 + this.w/2;
@@ -113,3 +113,4 @@ this.f = 1;
 
 
 }
+

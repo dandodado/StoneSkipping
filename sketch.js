@@ -3,6 +3,7 @@ let airs = [];
 let paticle;
 let w = 20; 
 let m = 40;
+let speed = 10;
 function setup() {
   createCanvas(1400, 400);
   for (let y = height/2+20; y < height; y += w*1.2) {
@@ -15,7 +16,10 @@ function setup() {
       airs.push(new Air(x, y, m/3));
     }
   }
-paticle = new Paticle();
+paticle = new Paticle(speed);
+slider = createSlider(1, 10 , 10, 1);
+slider.position(800, 500);
+slider.style('width', '300px');
 }
 
 function draw() {
@@ -69,6 +73,12 @@ function draw() {
   p = createVector(0, 0.8);
   paticle.applyForce(p);
   paticle.update();
-  paticle.checkEdges();
+  let speed = slider.value();
+ 
 
+}
+function keyPressed() {
+  if (key === ' ') {  
+  paticle.checkEdges(speed);
+  }
 }
